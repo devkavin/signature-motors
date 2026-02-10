@@ -30,8 +30,8 @@ export default function InventorySection() {
 
   return (
     <section id="inventory" className="mx-auto max-w-7xl px-4 py-16 md:px-6">
-      <h2 className="section-title">Drive your signature lineup</h2>
-      <p className="section-subtitle">Match your signature vehicle by budget, performance, and lifestyle in seconds.</p>
+      <h2 className="section-title">Find your perfect car</h2>
+      <p className="section-subtitle">Filter live inventory by budget, fuel preference, model year, and drivetrain needs.</p>
 
       <div className="mt-8 grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-3 lg:grid-cols-6">
         <label className="text-sm">Max price (LKR)

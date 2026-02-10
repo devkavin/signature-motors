@@ -25,12 +25,12 @@ export default function HeroSection() {
       </div>
       <div className="relative mx-auto flex min-h-[calc(100vh-64px)] max-w-7xl items-center px-4 py-16 md:px-6">
         <div className="max-w-2xl rounded-2xl bg-slate-950/65 p-6 backdrop-blur">
-          <p className="text-sm uppercase tracking-[0.2em] text-slate-200">Signature Motors</p>
-          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">Drive your signature.</h1>
-          <p className="mt-4 text-base text-slate-200 md:text-lg">Own every mile with confidence—handpicked vehicles, transparent financing, and a seamless test-drive booking experience.</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-slate-200">Colombo’s Trusted Premium Dealership</p>
+          <h1 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">Drive home your next car with confidence.</h1>
+          <p className="mt-4 text-base text-slate-200 md:text-lg">Explore inspected luxury and family vehicles, secure transparent financing, and reserve your test drive online in minutes.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#inventory" className="rounded-md bg-brand-500 px-5 py-3 font-semibold text-white hover:bg-brand-700">Find Your Signature</a>
-            <a href="#contact" className="rounded-md border border-white/60 px-5 py-3 font-semibold hover:bg-white/10">Speak With Our Team</a>
+            <a href="#inventory" className="rounded-md bg-brand-500 px-5 py-3 font-semibold text-white hover:bg-brand-700">Browse Inventory</a>
+            <a href="#contact" className="rounded-md border border-white/60 px-5 py-3 font-semibold hover:bg-white/10">Book a Consultation</a>
           </div>
         </div>
       </div>
