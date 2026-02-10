@@ -19,8 +19,8 @@ export default function TradeInSection() {
 
   return (
     <section id="tradein" className="mx-auto max-w-7xl px-4 py-16 md:px-6">
-      <h2 className="section-title">Trade for your signature</h2>
-      <p className="section-subtitle">See your current value instantly, then upgrade with confidence.</p>
+      <h2 className="section-title">Trade-in estimator</h2>
+      <p className="section-subtitle">Get an instant estimate range before your showroom appraisal.</p>
 
       <div className="mt-8 grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-card lg:grid-cols-2">
         <form className="grid gap-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
