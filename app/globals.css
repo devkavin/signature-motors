@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section-title {
+  @apply text-3xl font-bold tracking-tight text-slate-900 md:text-4xl;
+}
+
+.section-subtitle {
+  @apply mt-3 max-w-3xl text-base text-slate-600 md:text-lg;
+}
