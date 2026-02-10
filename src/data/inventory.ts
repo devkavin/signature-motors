@@ -158,9 +158,9 @@ export const inventory: Vehicle[] = [
     drivetrain: 'AWD',
     fuel: 'Electric',
     transmission: 'Automatic',
-    primaryImage: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80',
+    primaryImage: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1200&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1622199433553-3e0c4e27c0a7?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1626072557464-90403b87f8f1?auto=format&fit=crop&w=1200&q=80'
