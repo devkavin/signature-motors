@@ -15,8 +15,8 @@ export default function FinancingSection() {
   return (
     <section id="financing" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <h2 className="section-title">Financing calculator</h2>
-        <p className="section-subtitle">Estimate monthly payments instantly and review an early amortization preview.</p>
+        <h2 className="section-title">Finance your signature</h2>
+        <p className="section-subtitle">Shape a payment plan that fits your lifestyle in seconds.</p>
 
         <div className="mt-8 grid gap-6 rounded-2xl border border-slate-200 p-6 shadow-card lg:grid-cols-2">
           <div className="space-y-4">

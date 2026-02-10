@@ -1,22 +1,25 @@
 import { Car } from "@/types/car";
 
+const modelImage = (query: string, sig: number) =>
+  `https://source.unsplash.com/1600x900/?${encodeURIComponent(query)}&sig=${sig}`;
+
 export const inventory: Car[] = [
   {
     id: "1",
     make: "Toyota",
-    model: "RAV4",
+    model: "RAV4 Hybrid",
     year: 2022,
     price: 16450000,
     mileage: 18200,
     drivetrain: "AWD",
     fuelType: "Hybrid",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2022 Toyota RAV4 Hybrid", 101),
     gallery: [
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2022 Toyota RAV4 Hybrid front", 102),
+      modelImage("2022 Toyota RAV4 Hybrid side", 103),
+      modelImage("2022 Toyota RAV4 Hybrid rear", 104),
+      modelImage("2022 Toyota RAV4 Hybrid interior", 105)
     ],
     specs: { engine: "2.5L Hybrid", power: "219 hp", seats: 5, color: "Pearl White" },
     description:
@@ -32,12 +35,12 @@ export const inventory: Car[] = [
     drivetrain: "RWD",
     fuelType: "Petrol",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2021 BMW 330i M Sport", 201),
     gallery: [
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514316703755-dca7d7d9d882?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2021 BMW 330i M Sport front", 202),
+      modelImage("2021 BMW 330i M Sport side", 203),
+      modelImage("2021 BMW 330i M Sport rear", 204),
+      modelImage("2021 BMW 330i M Sport interior", 205)
     ],
     specs: { engine: "2.0L Turbo", power: "255 hp", seats: 5, color: "Alpine White" },
     description:
@@ -53,12 +56,12 @@ export const inventory: Car[] = [
     drivetrain: "AWD",
     fuelType: "Petrol",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2020 Mercedes-Benz GLC 200", 301),
     gallery: [
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2020 Mercedes-Benz GLC 200 front", 302),
+      modelImage("2020 Mercedes-Benz GLC 200 side", 303),
+      modelImage("2020 Mercedes-Benz GLC 200 rear", 304),
+      modelImage("2020 Mercedes-Benz GLC 200 interior", 305)
     ],
     specs: { engine: "2.0L Turbo", power: "194 hp", seats: 5, color: "Obsidian Black" },
     description:
@@ -74,12 +77,12 @@ export const inventory: Car[] = [
     drivetrain: "FWD",
     fuelType: "Petrol",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2023 Honda Civic RS", 401),
     gallery: [
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616789916434-8f0f2f9f9c27?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2023 Honda Civic RS front", 402),
+      modelImage("2023 Honda Civic RS side", 403),
+      modelImage("2023 Honda Civic RS rear", 404),
+      modelImage("2023 Honda Civic RS interior", 405)
     ],
     specs: { engine: "1.5L Turbo", power: "180 hp", seats: 5, color: "Sonic Gray" },
     description:
@@ -95,12 +98,12 @@ export const inventory: Car[] = [
     drivetrain: "FWD",
     fuelType: "Diesel",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1555353540-64580b51c258?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2022 Kia Sportage", 501),
     gallery: [
-      "https://images.unsplash.com/photo-1532581140115-3e355d1ed1de?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1536700503339-1e4b06520771?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1553260188-75a8d6205b6c?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2022 Kia Sportage front", 502),
+      modelImage("2022 Kia Sportage side", 503),
+      modelImage("2022 Kia Sportage rear", 504),
+      modelImage("2022 Kia Sportage interior", 505)
     ],
     specs: { engine: "2.0L CRDi", power: "184 hp", seats: 5, color: "Steel Gray" },
     description:
@@ -116,12 +119,12 @@ export const inventory: Car[] = [
     drivetrain: "FWD",
     fuelType: "Electric",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1593941707882-a56bbc8df906?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2021 Nissan Leaf e+", 601),
     gallery: [
-      "https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617886322253-4ac4f32f6f13?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2021 Nissan Leaf e+ front", 602),
+      modelImage("2021 Nissan Leaf e+ side", 603),
+      modelImage("2021 Nissan Leaf e+ rear", 604),
+      modelImage("2021 Nissan Leaf e+ interior", 605)
     ],
     specs: { engine: "62 kWh Battery", power: "214 hp", seats: 5, color: "Arctic White" },
     description:
@@ -137,12 +140,12 @@ export const inventory: Car[] = [
     drivetrain: "AWD",
     fuelType: "Petrol",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1549925862-990a6fda31f1?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2021 Audi Q5 S line", 701),
     gallery: [
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1566473965997-3de9c817e938?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2021 Audi Q5 S line front", 702),
+      modelImage("2021 Audi Q5 S line side", 703),
+      modelImage("2021 Audi Q5 S line rear", 704),
+      modelImage("2021 Audi Q5 S line interior", 705)
     ],
     specs: { engine: "2.0L TFSI", power: "261 hp", seats: 5, color: "Navarra Blue" },
     description:
@@ -158,12 +161,12 @@ export const inventory: Car[] = [
     drivetrain: "AWD",
     fuelType: "Petrol",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2020 Mazda CX-5", 801),
     gallery: [
-      "https://images.unsplash.com/photo-1571987502536-0f5f70f00df6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1613214150381-1902fa15f5b0?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2020 Mazda CX-5 front", 802),
+      modelImage("2020 Mazda CX-5 side", 803),
+      modelImage("2020 Mazda CX-5 rear", 804),
+      modelImage("2020 Mazda CX-5 interior", 805)
     ],
     specs: { engine: "2.5L SkyActiv", power: "187 hp", seats: 5, color: "Soul Red" },
     description:
@@ -172,19 +175,19 @@ export const inventory: Car[] = [
   {
     id: "9",
     make: "Hyundai",
-    model: "Santa Fe",
+    model: "Santa Fe Hybrid",
     year: 2023,
     price: 18750000,
     mileage: 12300,
     drivetrain: "AWD",
     fuelType: "Hybrid",
     transmission: "Automatic",
-    image: "https://images.unsplash.com/photo-1597007030739-6d2e1b2b6d5b?auto=format&fit=crop&w=1200&q=80",
+    image: modelImage("2023 Hyundai Santa Fe Hybrid", 901),
     gallery: [
-      "https://images.unsplash.com/photo-1617469165786-8007eda3caa7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1616788494672-ec7ca25fdda9?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617469767053-d3b523a0b838?auto=format&fit=crop&w=1200&q=80"
+      modelImage("2023 Hyundai Santa Fe Hybrid front", 902),
+      modelImage("2023 Hyundai Santa Fe Hybrid side", 903),
+      modelImage("2023 Hyundai Santa Fe Hybrid rear", 904),
+      modelImage("2023 Hyundai Santa Fe Hybrid interior", 905)
     ],
     specs: { engine: "1.6L Turbo Hybrid", power: "226 hp", seats: 7, color: "Titan Gray" },
     description:
