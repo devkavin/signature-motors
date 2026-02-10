@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { makeModelMap, makes } from '@/data/inventory';
 import { TradeInInput, TradeInResult } from '@/types';
 import { Input } from '@/components/ui/Input';
 
@@ -27,17 +28,40 @@ function estimateTradeIn(input: TradeInInput): TradeInResult {
   };
 }
 
+const initialMake = makes[0] ?? 'Toyota';
+const initialModel = makeModelMap[initialMake]?.[0] ?? 'Corolla Cross';
+
 export function TradeInEstimator() {
-  const [input, setInput] = useState<TradeInInput>({ year: 2019, make: 'Toyota', model: 'Premio', mileage: 55000, condition: 'Good' });
+  const [input, setInput] = useState<TradeInInput>({ year: 2019, make: initialMake, model: initialModel, mileage: 55000, condition: 'Good' });
   const result = useMemo(() => estimateTradeIn(input), [input]);
+  const availableModels = makeModelMap[input.make] ?? [];
+
+  const onMakeChange = (make: string) => {
+    const nextModel = makeModelMap[make]?.[0] ?? '';
+    setInput((current) => ({ ...current, make, model: nextModel }));
+  };
 
   return (
     <section id="trade-in" className="space-y-4">
       <h2 className="text-2xl font-bold text-slate-900">Trade-in Estimator</h2>
       <div className="grid gap-4 rounded-xl border border-slate-200 bg-white p-4 md:grid-cols-2">
         <label className="text-sm font-medium">Year<Input type="number" value={input.year} onChange={(e) => setInput({ ...input, year: Number(e.target.value) })} /></label>
-        <label className="text-sm font-medium">Make<Input value={input.make} onChange={(e) => setInput({ ...input, make: e.target.value })} /></label>
-        <label className="text-sm font-medium">Model<Input value={input.model} onChange={(e) => setInput({ ...input, model: e.target.value })} /></label>
+        <label className="text-sm font-medium">
+          Make
+          <select className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" value={input.make} onChange={(e) => onMakeChange(e.target.value)}>
+            {makes.map((make) => (
+              <option key={make} value={make}>{make}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-sm font-medium">
+          Model
+          <select className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" value={input.model} onChange={(e) => setInput({ ...input, model: e.target.value })}>
+            {availableModels.map((model) => (
+              <option key={model} value={model}>{model}</option>
+            ))}
+          </select>
+        </label>
         <label className="text-sm font-medium">Mileage (km)<Input type="number" value={input.mileage} onChange={(e) => setInput({ ...input, mileage: Number(e.target.value) })} /></label>
         <label className="text-sm font-medium">Condition
           <select className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" value={input.condition} onChange={(e) => setInput({ ...input, condition: e.target.value as TradeInInput['condition'] })}>
