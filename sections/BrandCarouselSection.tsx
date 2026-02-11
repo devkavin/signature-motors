@@ -47,7 +47,7 @@ export default function BrandCarouselSection() {
 
     const id = window.setInterval(() => {
       if (isDragging) return;
-      node.scrollLeft += 1;
+      node.scrollLeft += 0.85;
       keepInfinite();
     }, 16);
 
@@ -74,30 +74,50 @@ export default function BrandCarouselSection() {
     node.scrollLeft = startLeft - delta;
   };
 
+  const scrollByBrand = (direction: "left" | "right") => {
+    const node = trackRef.current;
+    if (!node) return;
+    const amount = direction === "left" ? -220 : 220;
+    node.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
   return (
     <section id="car-brands" aria-labelledby="brands-title" className="mx-auto max-w-7xl px-4 py-14 md:px-6">
-      <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br from-white/10 to-slate-950/50 p-6 shadow-2xl backdrop-blur md:p-8">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.18),transparent_42%),radial-gradient(circle_at_80%_85%,rgba(56,189,248,0.18),transparent_38%)]" />
-
-        <div className="relative flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-amber-300">Signature Brands</p>
-            <h2 id="brands-title" className="mt-2 text-2xl font-bold text-slate-50 md:text-3xl">Explore top car brands in Sri Lanka.</h2>
-            <p className="mt-2 max-w-2xl text-sm text-slate-300">
-              Browse premium stock from {makes.join(", ")} and quickly jump into available inventory.
-            </p>
-          </div>
-          <a
-            href="#inventory"
-            className="rounded-md border border-white/25 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-amber-300 hover:text-amber-300"
-          >
-            View all available cars
-          </a>
+      <div className="flex items-end justify-between gap-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.22em] text-amber-300/80">Our inventory by make</p>
+          <h2 id="brands-title" className="mt-2 text-3xl font-bold text-slate-100 md:text-4xl">
+            Popular makes
+          </h2>
         </div>
+
+        <div className="hidden items-center gap-2 md:flex">
+          <button
+            type="button"
+            onClick={() => scrollByBrand("left")}
+            className="h-9 w-9 rounded-full border border-white/15 bg-white/5 text-lg text-slate-300 transition hover:border-amber-300 hover:text-amber-300"
+            aria-label="Scroll brands left"
+          >
+            &#8249;
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByBrand("right")}
+            className="h-9 w-9 rounded-full border border-white/15 bg-white/5 text-lg text-slate-300 transition hover:border-amber-300 hover:text-amber-300"
+            aria-label="Scroll brands right"
+          >
+            &#8250;
+          </button>
+        </div>
+      </div>
+
+      <div className="relative mt-6">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#070b12] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#070b12] to-transparent" />
 
         <div
           ref={trackRef}
-          className="relative mt-6 flex cursor-grab gap-3 overflow-x-auto pb-2 [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+          className="relative flex cursor-grab gap-4 overflow-x-auto pb-2 [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
           onMouseDown={(e) => onDragStart(e.clientX)}
           onMouseMove={(e) => onDragMove(e.clientX)}
           onMouseUp={() => setIsDragging(false)}
@@ -111,14 +131,14 @@ export default function BrandCarouselSection() {
             <a
               key={`${make}-${idx}`}
               href="#inventory"
-              className="flex min-h-24 min-w-[170px] shrink-0 items-center justify-center rounded-full border border-white/25 bg-slate-950/75 px-6 py-4 shadow-lg transition hover:-translate-y-1 hover:border-amber-300/80"
+              className="group flex min-h-[112px] min-w-[190px] shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.02] px-5 py-4 transition hover:-translate-y-1 hover:border-amber-300/70"
               aria-label={`Browse ${make} inventory`}
             >
               <img
                 src={brandLogos[make]}
                 alt={`${make} logo`}
                 loading="lazy"
-                className="h-10 w-auto max-w-[120px] object-contain"
+                className="h-10 w-auto max-w-[130px] object-contain opacity-70 saturate-0 transition group-hover:opacity-100 group-hover:saturate-100"
               />
             </a>
           ))}
