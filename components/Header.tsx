@@ -4,6 +4,7 @@ import { useState } from "react";
 import clsx from "clsx";
 
 const links = [
+  ["Brands", "car-brands"],
   ["Inventory", "inventory"],
   ["Financing", "financing"],
   ["Trade-in", "tradein"],
@@ -16,15 +17,15 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6" aria-label="Main navigation">
-        <a href="#top" className="font-bold tracking-tight text-brand-900">
-          Signature Motors
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070b12]/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6" aria-label="Main navigation">
+        <a href="#top" className="font-bold tracking-tight text-white">
+          Signature Motors <span className="ml-2 hidden text-xs font-medium uppercase tracking-[0.2em] text-amber-300 md:inline">Drive your signature.</span>
         </a>
 
         <button
           type="button"
-          className="rounded-md border border-slate-300 p-2 md:hidden"
+          className="rounded-md border border-white/30 p-2 text-white md:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label="Toggle navigation menu"
@@ -33,10 +34,10 @@ export default function Header() {
           ☰
         </button>
 
-        <ul className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <ul className="hidden items-center gap-6 text-sm font-medium text-slate-100 md:flex">
           {links.map(([label, id]) => (
             <li key={id}>
-              <a href={`#${id}`} className="transition hover:text-brand-700">
+              <a href={`#${id}`} className="transition hover:text-amber-300">
                 {label}
               </a>
             </li>
@@ -45,10 +46,10 @@ export default function Header() {
       </nav>
 
       <div id="mobile-menu" className={clsx("md:hidden", !open && "hidden")}>
-        <ul className="space-y-1 border-t border-slate-200 bg-white px-4 py-3 text-sm font-medium">
+        <ul className="space-y-1 border-t border-white/10 bg-[#070b12] px-4 py-3 text-sm font-medium text-slate-100">
           {links.map(([label, id]) => (
             <li key={id}>
-              <a href={`#${id}`} className="block rounded px-2 py-2 hover:bg-slate-100" onClick={() => setOpen(false)}>
+              <a href={`#${id}`} className="block rounded px-2 py-2 hover:bg-white/10" onClick={() => setOpen(false)}>
                 {label}
               </a>
             </li>

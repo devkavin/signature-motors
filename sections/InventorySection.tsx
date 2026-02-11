@@ -29,35 +29,35 @@ export default function InventorySection() {
   );
 
   return (
-    <section id="inventory" className="mx-auto max-w-7xl px-4 py-16 md:px-6">
-      <h2 className="section-title">Find your perfect car</h2>
-      <p className="section-subtitle">Filter live inventory by budget, fuel preference, model year, and drivetrain needs.</p>
+    <section id="inventory" className="mx-auto max-w-7xl px-4 py-20 md:px-6">
+      <h2 className="section-title">Choose the drive that signs your story.</h2>
+      <p className="section-subtitle">Filter by budget, brand, and performance to discover vehicles curated for your next chapter.</p>
 
-      <div className="mt-8 grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 md:grid-cols-3 lg:grid-cols-6">
+      <div className="mt-8 grid gap-4 rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur md:grid-cols-3 lg:grid-cols-6">
         <label className="text-sm">Max price (LKR)
           <input type="range" min={9000000} max={33000000} step={250000} value={maxPrice} onChange={(e) => setMaxPrice(Number(e.target.value))} className="w-full" />
-          <span className="text-xs text-slate-500">{maxPrice.toLocaleString("en-LK")}</span>
+          <span className="text-xs text-slate-400">{maxPrice.toLocaleString("en-LK")}</span>
         </label>
         <label className="text-sm">Make
-          <select value={make} onChange={(e) => setMake(e.target.value)} className="mt-1 w-full rounded-md border border-slate-300 px-2 py-2">
+          <select value={make} onChange={(e) => setMake(e.target.value)} className="mt-1 w-full rounded-md border border-white/20 bg-slate-900/60 px-2 py-2">
             <option>All</option>
             {makes.map((m) => <option key={m}>{m}</option>)}
           </select>
         </label>
         <label className="text-sm">Min year
-          <input type="number" value={yearMin} min={2018} max={2024} onChange={(e) => setYearMin(Number(e.target.value))} className="mt-1 w-full rounded-md border border-slate-300 px-2 py-2" />
+          <input type="number" value={yearMin} min={2018} max={2024} onChange={(e) => setYearMin(Number(e.target.value))} className="mt-1 w-full rounded-md border border-white/20 bg-slate-900/60 px-2 py-2" />
         </label>
         <label className="text-sm">Max year
-          <input type="number" value={yearMax} min={2018} max={2024} onChange={(e) => setYearMax(Number(e.target.value))} className="mt-1 w-full rounded-md border border-slate-300 px-2 py-2" />
+          <input type="number" value={yearMax} min={2018} max={2024} onChange={(e) => setYearMax(Number(e.target.value))} className="mt-1 w-full rounded-md border border-white/20 bg-slate-900/60 px-2 py-2" />
         </label>
         <label className="text-sm">Fuel
-          <select value={fuel} onChange={(e) => setFuel(e.target.value as FuelType | "All")} className="mt-1 w-full rounded-md border border-slate-300 px-2 py-2">
+          <select value={fuel} onChange={(e) => setFuel(e.target.value as FuelType | "All")} className="mt-1 w-full rounded-md border border-white/20 bg-slate-900/60 px-2 py-2">
             <option>All</option>
             <option>Petrol</option><option>Diesel</option><option>Hybrid</option><option>Electric</option>
           </select>
         </label>
         <label className="text-sm">Transmission
-          <select value={transmission} onChange={(e) => setTransmission(e.target.value as Transmission | "All")} className="mt-1 w-full rounded-md border border-slate-300 px-2 py-2">
+          <select value={transmission} onChange={(e) => setTransmission(e.target.value as Transmission | "All")} className="mt-1 w-full rounded-md border border-white/20 bg-slate-900/60 px-2 py-2">
             <option>All</option><option>Automatic</option><option>Manual</option>
           </select>
         </label>
